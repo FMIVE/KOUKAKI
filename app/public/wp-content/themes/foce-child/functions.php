@@ -3,6 +3,15 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
+function mon_theme_ajout_scripts() {
+    wp_enqueue_script('koukaki', get_template_directory_uri() . '/js/koukaki.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'mon_theme_ajout_scripts');
+
+function mon_theme_enfant_ajout_scripts() {
+    wp_enqueue_script('koukaki', get_stylesheet_directory_uri() . '/js/koukaki.js', array('jquery'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'mon_theme_enfant_ajout_scripts');
 
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {

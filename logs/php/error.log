@@ -1,1 +1,2 @@
 [24-Feb-2024 09:01:14 UTC] Erreur d’événement de replanification de tâche pour le crochet wp_privacy_delete_old_export_files. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"hourly","args":[],"interval":3600}
+[26-Feb-2024 16:40:23 UTC] PHP Parse error:  syntax error, unexpected token "." in C:\Users\fmive\Local Beta Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php on line 8

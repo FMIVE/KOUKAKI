@@ -1,0 +1,113 @@
+// FADE IN SUR LA PAGE
+#page{
+	animation: fadin 4s;
+	@keyframes fadin{
+	from{	
+		opacity: 0;
+	}
+	to{	
+		opacity: 1;
+	}
+	}
+}
+
+#background-video {
+	width: 1440px;
+	position: absolute;
+	z-index: 1;
+  }
+
+.logo{
+	z-index: 2;
+}
+
+// changement d'image section "lieu" pour nuages
+.story #place {
+	background-image: url("./images/Studio_Koukaki-image_place.png");
+	}
+
+// ROTATION FLEUR
+::after{  
+	position: absolute;	 
+	animation-duration: 6s;
+	animation-name:  rotate-flower;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;	
+
+  		@keyframes rotate-flower {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+  		}
+  }
+   
+// centrage axe des fleurs
+// méthode1 donner taille carré box-parent
+  .story h2::after{
+	height:154px;
+  }  
+//   méthode2 déplacer axe de rotation vers centre de la fleur
+#studio h2::after{
+	transform-origin: 50% 53px;
+  } 
+
+#studio h2::before{  
+	height:191px;
+	position: absolute;	 
+	animation-duration: 6s;
+	animation-name:  rotate-flower;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;	
+	// transform-origin: 50% 96px;
+	@keyframes rotate-flower {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	  }
+  }
+
+.site-footer{	
+	overflow:inherit;// Evite le tronquage de l'image orchidée à droite
+	.site-footer::after{
+	height: 161px;
+  }
+  .site-footer ul::after{
+	height: 646px;
+  }
+}
+  .site-footer::before{  
+	height:154px;
+	position: absolute;	 
+	animation-duration: 6s;
+	animation-name:  rotate-flower;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;		
+  		@keyframes rotate-flower {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+  		}
+  }
+
+ 
+  @media screen and (max-width: 768px) {
+    /* Masquer la vidéo sur mobile */
+    video {
+        display: none;
+    }
+    /* Afficher l'image de fallback */
+    .logo{
+        display: block;
+        /* Ajoutez d'autres styles d'image ici */
+    }
+}
+ 

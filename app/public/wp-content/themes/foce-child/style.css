@@ -1,12 +1,106 @@
-/*
- Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
- Theme URI: https://www.koukaki.local
- Author: Studio Koukaki
- Author URI: https://www.koukaki.local
- Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
- Version: 0.1
- */
- .story #place {
-	background-image: url("./images/Studio_Koukaki-image_place.png");
+@charset "UTF-8";
+#page {
+  animation: fadin 4s;
 }
+@keyframes fadin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#background-video {
+  width: 1440px;
+  position: absolute;
+  z-index: 1;
+}
+
+.logo {
+  z-index: 2;
+}
+
+.story #place {
+  background-image: url("./images/Studio_Koukaki-image_place.png");
+}
+
+::after {
+  position: absolute;
+  animation-duration: 6s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.story h2::after {
+  height: 154px;
+}
+
+#studio h2::after {
+  transform-origin: 50% 53px;
+}
+
+#studio h2::before {
+  height: 191px;
+  position: absolute;
+  animation-duration: 6s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site-footer {
+  overflow: inherit;
+}
+.site-footer .site-footer::after {
+  height: 161px;
+}
+.site-footer .site-footer ul::after {
+  height: 646px;
+}
+
+.site-footer::before {
+  height: 154px;
+  position: absolute;
+  animation-duration: 6s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Masquer la vidéo sur mobile */
+  video {
+    display: none;
+  }
+  /* Afficher l'image de fallback */
+  .logo {
+    display: block;
+    /* Ajoutez d'autres styles d'image ici */
+  }
+}/*# sourceMappingURL=style.css.map */
