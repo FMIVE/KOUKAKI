@@ -1,0 +1,7 @@
+.site-footer::after {
+  bottom: 650px;
+}
+
+.site-footer::before {
+  top: -500px;
+}/*# sourceMappingURL=footer.css.map */

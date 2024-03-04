@@ -1,26 +1,70 @@
+@import"nominationFestival";
+@import"header";
+@import"footer";
+
+
 // FADE IN SUR LA PAGE
-#page{
-	animation: fadin 4s;
-	@keyframes fadin{
-	from{	
-		opacity: 0;
-	}
-	to{	
-		opacity: 1;
-	}
-	}
-}
+// #page{
+// 	animation: fadin 4s;
+// 	@keyframes fadin{
+// 	from{	
+// 		opacity: 0;
+// 	}
+// 	to{	
+// 		opacity: 1;
+// 	}
+// }
+// }
 
 #background-video {
 	width: 1440px;
-	position: absolute;
+	position:absolute;
 	z-index: 1;
   }
 
 .logo{
-	z-index: 2;
+	z-index: 2;	
+	animation: animHautBas 2s;
 }
 
+.h2Histoire{	
+	opacity: 0;
+	}
+.h2Histoire.scroll{
+	animation: animHautBas 2s;
+	animation-fill-mode: both;
+	display: block;
+}
+@keyframes animHautBas {
+	0% {
+	  transform: translateY(80px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+.h2Studio{	
+	opacity: 0;
+	}
+.h2Studio.scroll{
+	animation: animHautBas 2s;
+	animation-fill-mode: both;
+	display: block;
+}
+@keyframes animHautBas {
+	0% {
+	  transform: translateY(80px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+
+ 
 // changement d'image section "lieu" pour nuages
 .story #place {
 	background-image: url("./images/Studio_Koukaki-image_place.png");
@@ -29,25 +73,16 @@
 // ROTATION FLEUR
 ::after{  
 	position: absolute;	 
-	animation-duration: 6s;
+	animation-duration: 8s;
 	animation-name:  rotate-flower;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;	
+	}
 
-  		@keyframes rotate-flower {
-			from {
-				transform: rotate(0deg);
-			}
-			to {
-				transform: rotate(360deg);
-			}
-  		}
-  }
-   
 // centrage axe des fleurs
 // méthode1 donner taille carré box-parent
   .story h2::after{
-	height:154px;
+	height: 154px;
   }  
 //   méthode2 déplacer axe de rotation vers centre de la fleur
 #studio h2::after{
@@ -57,20 +92,11 @@
 #studio h2::before{  
 	height:191px;
 	position: absolute;	 
-	animation-duration: 6s;
+	animation-duration: 8s;
 	animation-name:  rotate-flower;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;	
-	// transform-origin: 50% 96px;
-	@keyframes rotate-flower {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
-	  }
-  }
+}
 
 .site-footer{	
 	overflow:inherit;// Evite le tronquage de l'image orchidée à droite
@@ -80,15 +106,17 @@
   .site-footer ul::after{
 	height: 646px;
   }
-}
+  }
   .site-footer::before{  
 	height:154px;
 	position: absolute;	 
-	animation-duration: 6s;
+	animation-duration: 8s;
 	animation-name:  rotate-flower;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;		
-  		@keyframes rotate-flower {
+  }
+
+	@keyframes rotate-flower {
 			from {
 				transform: rotate(0deg);
 			}
@@ -96,18 +124,25 @@
 				transform: rotate(360deg);
 			}
   		}
-  }
+//   --------------------------------------------------------------------------
 
- 
+	
+		
+    
+
+
+
+
+ /* Masquer la vidéo et afficher l'image de fallback sur mobile */
   @media screen and (max-width: 768px) {
-    /* Masquer la vidéo sur mobile */
+    
     video {
         display: none;
     }
-    /* Afficher l'image de fallback */
-    .logo{
+
+   .logo{
         display: block;
-        /* Ajoutez d'autres styles d'image ici */
+       
     }
 }
  

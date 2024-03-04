@@ -21,6 +21,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="simpleParallax.js"></script>
+<script src="wp-content/themes/foce-child/koukaki.js"></script>
 </body>
 </html>
