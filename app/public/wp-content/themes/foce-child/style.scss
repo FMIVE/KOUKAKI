@@ -4,32 +4,83 @@
 
 
 // FADE IN SUR LA PAGE
-// #page{
-// 	animation: fadin 4s;
-// 	@keyframes fadin{
-// 	from{	
-// 		opacity: 0;
-// 	}
-// 	to{	
-// 		opacity: 1;
-// 	}
-// }
-// }
+#page{
+	animation: fadin 4s;
+	@keyframes fadin{
+	from{	
+		opacity: 0;
+	}
+	to{	
+		opacity: 1;
+	}
+}
+}
+.banner{
+	background-image: none;
+}
 
 #background-video {
 	width: 1440px;
 	position:absolute;
 	z-index: 1;
+animation: animateHautvideo 2s 300ms both;
+opacity: 1;
+  }
+@keyframes animateHautvideo{
+	0% {
+	  transform: translateY(-200px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
   }
 
 .logo{
 	z-index: 2;	
 	animation: animHautBas 2s;
 }
+	
+.lieuH3{
+	position: relative;
+	
+}
 
-.h2Histoire{	
-	opacity: 0;
+.lieuH3.scroll {
+	animation: animHautBas 2s;
+	animation-fill-mode: both;
+	display: block;
+}
+@keyframes animHautBas {
+	0% {
+	  transform: translateY(80px);
+	  opacity: 0;
 	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+#story{
+	position: relative;
+	}
+
+#story.scroll{
+	animation: animHautBas 4s;
+	animation-fill-mode: both;
+		 }
+ @keyframes animHautBas {
+	0% {
+	  transform: translateY(300px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+
 .h2Histoire.scroll{
 	animation: animHautBas 2s;
 	animation-fill-mode: both;
@@ -45,7 +96,42 @@
 	  opacity: 1;
 	}
   }
-.h2Studio{	
+  // changement d'image section "lieu" pour nuages
+.story #place{
+	background-image: url("./images/Studio_Koukaki-image_place.png");
+	// opacity: 0 ;
+  }
+.story #place.scroll{
+		animation: animHautBas 4s;
+		// animation-fill-mode: both;
+	
+			}
+	@keyframes animHautBas {
+		0% {
+		  transform: translateY(600px);
+		  opacity: 0;
+		}
+		100% {
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+	  }
+
+#studio.scroll{
+	animation: animHautBas 4s;
+	animation-fill-mode: both;
+	 }
+ @keyframes animHautBas {
+	0% {
+	  transform: translateY(600px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  .h2Studio{	
 	opacity: 0;
 	}
 .h2Studio.scroll{
@@ -64,11 +150,7 @@
 	}
   }
 
- 
-// changement d'image section "lieu" pour nuages
-.story #place {
-	background-image: url("./images/Studio_Koukaki-image_place.png");
-	}
+	
 
 // ROTATION FLEUR
 ::after{  
@@ -141,8 +223,9 @@
     }
 
    .logo{
-        display: block;
-       
-    }
-}
- 
+        display: block;        }
+		
+	.banner{
+	background-image: url("images/banner.png");
+	}
+  }

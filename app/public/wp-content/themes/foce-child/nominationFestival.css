@@ -11,13 +11,13 @@
 }
 
 #nomination.scroll {
-  animation: animHautBas 2s;
+  animation: animHautBas 3s;
   animation-fill-mode: both;
 }
 
 @keyframes animHautBas {
   0% {
-    transform: translateY(80px);
+    transform: translateY(300px);
     opacity: 0;
   }
   100% {

@@ -12,13 +12,13 @@
 }
 
 #nomination.scroll {
-  animation: animHautBas 2s;
+  animation: animHautBas 3s;
   animation-fill-mode: both;
 }
 
 @keyframes animHautBas {
   0% {
-    transform: translateY(80px);
+    transform: translateY(300px);
     opacity: 0;
   }
   100% {
@@ -49,21 +49,84 @@
   top: -500px;
 }
 
+#page {
+  animation: fadin 4s;
+}
+@keyframes fadin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.banner {
+  background-image: none;
+}
+
 #background-video {
   width: 1440px;
   position: absolute;
   z-index: 1;
+  animation: animateHautvideo 2s 300ms both;
+  opacity: 1;
 }
 
+@keyframes animateHautvideo {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .logo {
   z-index: 2;
   animation: animHautBas 2s;
 }
 
-.h2Histoire {
-  opacity: 0;
+.lieuH3 {
+  position: relative;
 }
 
+.lieuH3.scroll {
+  animation: animHautBas 2s;
+  animation-fill-mode: both;
+  display: block;
+}
+
+@keyframes animHautBas {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#story {
+  position: relative;
+}
+
+#story.scroll {
+  animation: animHautBas 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes animHautBas {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .h2Histoire.scroll {
   animation: animHautBas 2s;
   animation-fill-mode: both;
@@ -73,6 +136,39 @@
 @keyframes animHautBas {
   0% {
     transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.story #place {
+  background-image: url("./images/Studio_Koukaki-image_place.png");
+}
+
+.story #place.scroll {
+  animation: animHautBas 4s;
+}
+
+@keyframes animHautBas {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#studio.scroll {
+  animation: animHautBas 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes animHautBas {
+  0% {
+    transform: translateY(600px);
     opacity: 0;
   }
   100% {
@@ -100,10 +196,6 @@
     opacity: 1;
   }
 }
-.story #place {
-  background-image: url("./images/Studio_Koukaki-image_place.png");
-}
-
 ::after {
   position: absolute;
   animation-duration: 8s;
@@ -163,5 +255,8 @@
   }
   .logo {
     display: block;
+  }
+  .banner {
+    background-image: url("images/banner.png");
   }
 }/*# sourceMappingURL=style.css.map */
