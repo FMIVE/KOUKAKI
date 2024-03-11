@@ -1,0 +1,38 @@
+.story {
+  #characters{
+    margin: 6em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h3{      
+    background-image: url("/wp-content/themes/foce-child/images/orange_characters_bg.png");
+    }
+
+    div{
+      flex: none;
+    }
+
+    .swiper-container {      
+      max-width: 1440px;
+      width: 100%;
+      padding-top: 80px;
+      flex:none;
+      @media (max-width: 780px) {
+        max-width: 900px;
+      }
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        h4{
+          font-family:"Roboto Mono", monospace;
+          font-weight: 400;
+          font-size: 1.5rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+  
+

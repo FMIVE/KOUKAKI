@@ -1,0 +1,33 @@
+.story #characters {
+  margin: 6em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.story #characters h3 {
+  background-image: url("/wp-content/themes/foce-child/images/orange_characters_bg.png");
+}
+.story #characters div {
+  flex: none;
+}
+.story #characters .swiper-container {
+  max-width: 1440px;
+  width: 100%;
+  padding-top: 80px;
+  flex: none;
+}
+@media (max-width: 780px) {
+  .story #characters .swiper-container {
+    max-width: 900px;
+  }
+}
+.story #characters .swiper-container .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.story #characters .swiper-container .swiper-slide h4 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 0;
+}/*# sourceMappingURL=section-characters.css.map */

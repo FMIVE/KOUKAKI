@@ -1,14 +1,17 @@
 /*mise en forme de la section nomination au oscars)*/
 // 
 #nomination {
+  position: relative;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   background-image: url('/wp-content/themes/foce-child/images/orange_oscars_bg.png');
   background-repeat: no-repeat; 
   color: white; 
-  padding:30px 30px 50px 30px; 
-  margin:150px 0 100px 150px;
+  padding: 34px 120px 50px 1px;
+  margin: 150px 0 100px 153px;
+  gap: 40px 0;
 }
 
 #nomination.scroll{
@@ -38,5 +41,34 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.84px;
-  margin: 20px 150px 20px 30px; /* Distance logo */
+  margin: 20px 90px 20px -20px; /* Distance logo */
+}
+.site-footer::after{
+content: "";
+display: none;
+}
+.site-footer::before{
+content: "";
+display: none;
+}
+
+#nomination::before{
+  content: url('/wp-content/themes/foce-child/images/Sunflower.png');
+  position: absolute;
+  bottom: 14em;
+  left: -6em;
+  animation-duration: 8s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#nomination::after{
+  content: url('/wp-content/themes/foce-child/images/orchid.png');
+  position: absolute;
+  bottom: 22em;
+  right: -3em;
+  animation-duration: 8s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }

@@ -1,14 +1,17 @@
 @charset "UTF-8";
 /*mise en forme de la section nomination au oscars)*/
 #nomination {
+  position: relative;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   background-image: url("/wp-content/themes/foce-child/images/orange_oscars_bg.png");
   background-repeat: no-repeat;
   color: white;
-  padding: 30px 30px 50px 30px;
-  margin: 150px 0 100px 150px;
+  padding: 34px 120px 50px 1px;
+  margin: 150px 0 100px 153px;
+  gap: 40px 0;
 }
 
 #nomination.scroll {
@@ -38,20 +41,75 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.84px;
-  margin: 20px 150px 20px 30px; /* Distance logo */
+  margin: 20px 90px 20px -20px; /* Distance logo */
 }
 
 .site-footer::after {
-  bottom: 650px;
+  content: "";
+  display: none;
 }
 
 .site-footer::before {
-  top: -500px;
+  content: "";
+  display: none;
 }
 
-#page {
-  animation: fadin 4s;
+#nomination::before {
+  content: url("/wp-content/themes/foce-child/images/Sunflower.png");
+  position: absolute;
+  bottom: 14em;
+  left: -6em;
+  animation-duration: 8s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+#nomination::after {
+  content: url("/wp-content/themes/foce-child/images/orchid.png");
+  position: absolute;
+  bottom: 22em;
+  right: -3em;
+  animation-duration: 8s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.story #characters {
+  margin: 6em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.story #characters h3 {
+  background-image: url("/wp-content/themes/foce-child/images/orange_characters_bg.png");
+}
+.story #characters div {
+  flex: none;
+}
+.story #characters .swiper-container {
+  max-width: 1440px;
+  width: 100%;
+  padding-top: 80px;
+  flex: none;
+}
+@media (max-width: 780px) {
+  .story #characters .swiper-container {
+    max-width: 900px;
+  }
+}
+.story #characters .swiper-container .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.story #characters .swiper-container .swiper-slide h4 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
 @keyframes fadin {
   from {
     opacity: 0;
@@ -60,9 +118,48 @@
     opacity: 1;
   }
 }
+@keyframes animHautBas {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes flottement {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#page {
+  animation: fadin 4s;
+}
 
 .banner {
   background-image: none;
+}
+.banner .logo {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  animation: animHautBas 4s;
+  animation: flottement 3000ms ease-in-out 1000ms infinite;
 }
 
 #background-video {
@@ -73,41 +170,6 @@
   opacity: 1;
 }
 
-@keyframes animateHautvideo {
-  0% {
-    transform: translateY(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.logo {
-  z-index: 2;
-  animation: animHautBas 2s;
-}
-
-.lieuH3 {
-  position: relative;
-}
-
-.lieuH3.scroll {
-  animation: animHautBas 2s;
-  animation-fill-mode: both;
-  display: block;
-}
-
-@keyframes animHautBas {
-  0% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 #story {
   position: relative;
 }
@@ -117,32 +179,22 @@
   animation-fill-mode: both;
 }
 
-@keyframes animHautBas {
-  0% {
-    transform: translateY(300px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .h2Histoire.scroll {
   animation: animHautBas 2s;
   animation-fill-mode: both;
   display: block;
 }
 
-@keyframes animHautBas {
-  0% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.lesPersonnagesH3 {
+  width: 15em;
 }
+
+.lesPersonnagesH3.scroll {
+  animation: animHautBas 2s;
+  animation-fill-mode: both;
+  display: block;
+}
+
 .story #place {
   background-image: url("./images/Studio_Koukaki-image_place.png");
 }
@@ -151,31 +203,17 @@
   animation: animHautBas 4s;
 }
 
-@keyframes animHautBas {
-  0% {
-    transform: translateY(600px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.lieuH3.scroll {
+  animation: animHautBas 2s;
+  animation-fill-mode: both;
+  display: block;
 }
+
 #studio.scroll {
   animation: animHautBas 4s;
   animation-fill-mode: both;
 }
 
-@keyframes animHautBas {
-  0% {
-    transform: translateY(600px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .h2Studio {
   opacity: 0;
 }
@@ -186,18 +224,7 @@
   display: block;
 }
 
-@keyframes animHautBas {
-  0% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 ::after {
-  position: absolute;
   animation-duration: 8s;
   animation-name: rotate-flower;
   animation-iteration-count: infinite;
@@ -240,14 +267,6 @@
   animation-timing-function: linear;
 }
 
-@keyframes rotate-flower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* Masquer la vidéo et afficher l'image de fallback sur mobile */
 @media screen and (max-width: 768px) {
   video {
