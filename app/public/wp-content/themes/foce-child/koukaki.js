@@ -7,7 +7,6 @@ window.addEventListener('scroll', function() {
     }
     else{animH2Histoire.classList.remove('scroll');}
   });
-console.log(animH2Histoire);
 
 //section story
   const animStory = document.getElementById('story');
@@ -17,18 +16,16 @@ window.addEventListener('scroll', function() {
     }
     else{animStory.classList.remove('scroll');}
   });
-  console.log(animStory);
 
 // titre les personnages
 const animTitrePersonnages = document.querySelector('.lesPersonnagesH3');
 window.addEventListener('scroll', function() {
-   if(window.scrollY >700) {
+   if(window.scrollY >750) {
     animTitrePersonnages.classList.add('scroll');
     }
     else{ animTitrePersonnages.classList.remove('scroll');}
   });
-  console.log( animTitrePersonnages);
-
+ 
  //sous-section lieu
 const animSecLieu = document.querySelector('.story #place');
 window.addEventListener('scroll', function() {
@@ -37,8 +34,7 @@ window.addEventListener('scroll', function() {
     }
     else{animSecLieu.classList.remove('scroll');}
   });
-  console.log(animSecLieu);
-
+  
 // titre lieu
 const animLieu = document.querySelector('.lieuH3');
 window.addEventListener('scroll', function() {
@@ -47,8 +43,7 @@ window.addEventListener('scroll', function() {
     }
     else{animLieu.classList.remove('scroll');}
   });
-  console.log(animLieu);
-
+ 
 //section studio
   const animStudio = document.getElementById('studio');
   window.addEventListener('scroll', function() {
@@ -57,8 +52,7 @@ window.addEventListener('scroll', function() {
       }
       else{animStudio.classList.remove('scroll');}
     });
-    console.log(animStudio);
-
+   
 // titre studio koukaki
 const animH2Studio = document.querySelector('.h2Studio');
 window.addEventListener('scroll', function() {
@@ -67,17 +61,25 @@ window.addEventListener('scroll', function() {
     }
     else{animH2Studio.classList.remove('scroll');}
   });
-console.log(animH2Studio);
 
 //section nomination
 const animNomination = document.getElementById('nomination');
 window.addEventListener('scroll', function() {
-   if(window.scrollY >2700) {
+   if(window.scrollY >2800) {
     animNomination.classList.add('scroll');
     }
     else{animNomination.classList.remove('scroll');}
   });
-  console.log(animNomination);
+  //texte Nomination
+  const animTexteNomination = document.querySelector('.texte');
+  window.addEventListener('scroll', function() {
+     if(window.scrollY >2900) {
+      animTexteNomination.classList.add('scroll');
+      }
+      else{ animTexteNomination.classList.remove('scroll');}
+    });
+  
+
 
   // SWIPER SLIDER
   //pour changer des paramètres, voir Doc swiperjs.com/swiper-api le tableau
@@ -98,4 +100,16 @@ window.addEventListener('scroll', function() {
     slideShadows: false,
     },
   });
+
+//Animation nuages
+let bigCloud = document.querySelector('.bigCloud');
+let littleCloud = document.querySelector('.littleCloud');
+window.onscroll = () => {
+  let pos = window.scrollY;
+  if (pos > 1700) {
+    let translateValue = Math.min(pos - 1700, 300);
+    bigCloud.style.transform = `translateX(${-translateValue}px)`;
+    littleCloud.style.transform = `translateX(${-translateValue}px)`;
+  }
+}
 

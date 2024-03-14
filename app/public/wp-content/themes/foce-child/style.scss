@@ -1,25 +1,36 @@
+
 @import"nominationFestival";
 @import"footer";
 @import"section-characters";
 
 @keyframes fadin{
-	from{	
-		opacity: 0;
-	}
-	to{	
-		opacity: 1;
-	}
+			from{	
+				opacity: 0;
+			}
+			to{	
+				opacity: 1;
+			}
 }
 @keyframes animHautBas {
-	0% {
-	  transform: translateY(80px);
-	  opacity: 0;
-	}
-	100% {
-	  transform: translateY(0);
-	  opacity: 1;
-	}
-  }
+			0% {
+			transform: translateY(80px);
+			opacity: 0;
+			}
+			100% {
+			transform: translateY(0);
+			opacity: 1;
+			}
+}
+@keyframes animateHautvideo{
+			0% {
+			transform: translateY(-200px);
+			opacity: 0;
+			}
+			100% {
+			transform: translateY(0);
+			opacity: 1;
+			}
+}
 @keyframes flottement {
 			0% {
 	 		 transform: translateY(0px);
@@ -30,7 +41,7 @@
 			100% {
 			transform: translateY(0px);
 			}
-  		}
+}
 @keyframes rotate-flower {
 			from {
 				transform: rotate(0deg);
@@ -38,7 +49,7 @@
 			to {
 				transform: rotate(360deg);
 			}
-  		}
+}
 
 // FADE IN SUR LA PAGE
 #page{
@@ -57,12 +68,20 @@
 }
 
 #background-video {
-			width: 1440px;
-			position:absolute;
-			z-index: 1;
-			animation: animateHautvideo 2s 300ms both;
-			opacity: 1;
-		}
+	width: 1440px;
+	position:absolute;
+	z-index: 1;
+	animation: animateHautvideo 2s 300ms both;
+	opacity: 1;
+}		
+
+#background-image{
+	width: 1440px;
+	position:absolute;
+	z-index: -2;
+	animation: animateHautvideo 2s 300ms both;
+	opacity: 1;
+}
 		
 #story{
 	position: relative;
@@ -73,13 +92,13 @@
 	}
 	
 .h2Histoire.scroll{
-		animation: animHautBas 2s;
-		animation-fill-mode: both;
-		display: block;
+	animation: animHautBas 2s;
+	animation-fill-mode: both;
+	display: block;
 }
 .lesPersonnagesH3{
 	width: 15em;
-}	
+	}	
 	.lesPersonnagesH3.scroll {
 		animation: animHautBas 2s;
 		animation-fill-mode: both;
@@ -88,11 +107,12 @@
 
   // changement d'image section "lieu" pour nuages
 .story #place{
+	position: relative;
 	background-image: url("./images/Studio_Koukaki-image_place.png");
 }
 	.story #place.scroll{
 		animation: animHautBas 4s;
-		}
+	}
 
 	.lieuH3.scroll {
 		animation: animHautBas 2s;
@@ -100,10 +120,29 @@
 		display: block;
 	}
 
+	#place .bigCloud,
+	#place .littleCloud {
+	    position:absolute;
+	    filter: blur(16.5px);
+        z-index: 2;
+	}
+	
+	.bigCloud {
+	  height: 122px;	
+	  top: 70px;
+	  right: 180px;
+	}
+	
+	#place .littleCloud {
+	  height: 55px;	
+	  top: 250px;
+	  right: 500px;
+	}
+
 #studio.scroll{
 	animation: animHautBas 4s;
 	animation-fill-mode: both;
-	}
+}
 
 	.h2Studio{	
 		opacity: 0;

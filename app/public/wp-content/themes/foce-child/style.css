@@ -1,27 +1,8 @@
 @charset "UTF-8";
 /*mise en forme de la section nomination au oscars)*/
-#nomination {
-  position: relative;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-image: url("/wp-content/themes/foce-child/images/orange_oscars_bg.png");
-  background-repeat: no-repeat;
-  color: white;
-  padding: 34px 120px 50px 1px;
-  margin: 150px 0 100px 153px;
-  gap: 40px 0;
-}
-
-#nomination.scroll {
-  animation: animHautBas 3s;
-  animation-fill-mode: both;
-}
-
 @keyframes animHautBas {
   0% {
-    transform: translateY(300px);
+    transform: translateY(80px);
     opacity: 0;
   }
   100% {
@@ -29,21 +10,76 @@
     opacity: 1;
   }
 }
-.texte {
+#nomination {
+  position: relative;
   display: flex;
-  text-justify: auto;
   flex-wrap: wrap;
+  align-items: center;
+  padding: 0 180px;
+  margin-top: 170px;
+  margin-bottom: 50px;
+  animation-name: animHautBas 4s;
+}
+
+#nomination.scroll {
+  animation: animHautBas 3s;
+  animation-fill-mode: both;
+}
+
+.texte {
+  position: absolute;
   color: #FFF5E9;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Quicksand;
-  font-size: 42px;
+  font-size: 2.5vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.84px;
-  margin: 20px 90px 20px -20px; /* Distance logo */
+  padding-left: 70px;
+  z-index: 1;
+  animation-name: animHautBas 4s;
+  animation-fill-mode: both;
 }
 
+.texte.scroll {
+  animation: animHautBas 3s;
+  animation-fill-mode: both;
+}
+
+.fondOrangeNomination {
+  position: relative;
+  width: 67%;
+}
+
+.logoOscar {
+  position: relative;
+  left: 100px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1223px) {
+  #nomination {
+    flex-direction: column;
+    text-align: center;
+  }
+  .fondOrangeNomination {
+    display: none;
+  }
+  .logoOscar {
+    position: static;
+    margin-top: 100px;
+  }
+  .texte {
+    padding: 0;
+    color: #FF5C00;
+  }
+}
+@media screen and (max-width: 600px) {
+  .texte {
+    font-size: 3.5vw;
+  }
+}
 .site-footer::after {
   content: "";
   display: none;
@@ -58,7 +94,7 @@
   content: url("/wp-content/themes/foce-child/images/Sunflower.png");
   position: absolute;
   bottom: 14em;
-  left: -6em;
+  left: 6em;
   animation-duration: 8s;
   animation-name: rotate-flower;
   animation-iteration-count: infinite;
@@ -128,6 +164,16 @@
     opacity: 1;
   }
 }
+@keyframes animateHautvideo {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes flottement {
   0% {
     transform: translateY(0px);
@@ -170,6 +216,14 @@
   opacity: 1;
 }
 
+#background-image {
+  width: 1440px;
+  position: absolute;
+  z-index: -2;
+  animation: animateHautvideo 2s 300ms both;
+  opacity: 1;
+}
+
 #story {
   position: relative;
 }
@@ -196,6 +250,7 @@
 }
 
 .story #place {
+  position: relative;
   background-image: url("./images/Studio_Koukaki-image_place.png");
 }
 
@@ -207,6 +262,25 @@
   animation: animHautBas 2s;
   animation-fill-mode: both;
   display: block;
+}
+
+#place .bigCloud,
+#place .littleCloud {
+  position: absolute;
+  filter: blur(16.5px);
+  z-index: 2;
+}
+
+.bigCloud {
+  height: 122px;
+  top: 70px;
+  right: 180px;
+}
+
+#place .littleCloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
 }
 
 #studio.scroll {
