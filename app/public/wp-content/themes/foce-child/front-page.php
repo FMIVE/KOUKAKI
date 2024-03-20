@@ -2,25 +2,19 @@
 
 get_header();
 ?>
-
     <main id="primary" class="site-main">
         <section class="banner">
-          
             <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-            <video id="background-image" autoplay loop muted >
+            <video id="background-video" autoplay loop muted >
             <source src="wp-content/themes/foce-child/images/Studio+Koukaki-vidéo+header+sans+son.mp4" type="video/mp4">
-            Votre navigateur ne prend pas en charge la lecture de vidéos.   
-          <img class="background-video" src="<?php echo get_theme_file_uri() . '/images/banner.png'; ?>" alt="">
+            <img class="background-image" src="<?php echo get_theme_file_uri() . '/images/banner.png'; ?>" alt="">
         </section>
-       
         <section id="story" class="story">
             <h2><span class="h2Histoire">L'histoire</span></h2>
             <article id="story__article" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-                      
-            <?php get_template_part('section-characters'); ?>
-
+                <?php get_template_part('section-characters'); ?>
             <article id="place">
             <img class="bigCloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
                 <img class="littleCloud" src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
@@ -30,8 +24,6 @@ get_header();
                 </div>
             </article>
         </section>
-
-
         <section id="studio">
             <h2><span class="h2Studio">Studio Koukaki</span></h2>
             <div class="textStudio">

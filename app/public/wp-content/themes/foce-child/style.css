@@ -1,4 +1,187 @@
 @charset "UTF-8";
+#newSidenav {
+  position: fixed;
+  max-width: 1440px;
+  z-index: 4;
+}
+
+.sidenav {
+  position: fixed;
+  width: 100% !important;
+  height: 1020px;
+  z-index: 2;
+  top: -1020px;
+  background-color: #FFF5E9;
+  transition: top 0.6s ease-out;
+  overflow-x: hidden;
+  margin-left: 0;
+}
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidenav .petitLogo {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+.sidenav.active {
+  position: absolute;
+  top: 80px;
+  width: -webkit-fill-available;
+  animation: animateHautvideo 1s 300ms both;
+  opacity: 1;
+}
+.sidenav a {
+  font-size: 64px;
+  color: black;
+  font-family: Roboto Mono;
+  position: relative;
+  transition: 0.3s;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 13px;
+}
+.sidenav a:hover {
+  color: #000000;
+}
+
+#menu {
+  position: fixed !important;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.menu {
+  display: flex;
+  width: 1440px;
+  height: 80px;
+  overflow: hidden;
+  justify-content: flex-end;
+  gap: 19%;
+  background-color: #FFD5A2;
+  z-index: 5;
+}
+.menu .titreMenu {
+  color: #000;
+  font-size: 2vw;
+}
+.menu .button {
+  display: flex;
+  justify-content: flex-end;
+  height: 90px;
+  padding-top: 18px;
+  padding-right: 150px;
+}
+.menu .button .bar {
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 10px 0;
+  background-color: #333;
+  transition: 0.3s ease-out;
+}
+
+#toggleBtn.active .bar:nth-child(1) {
+  transform: rotate(-135deg) translateX(-19px);
+}
+#toggleBtn.active .bar:nth-child(2) {
+  opacity: 0;
+  transition: 0.3s;
+}
+#toggleBtn.active .bar:nth-child(3) {
+  transform: rotate(135deg) translateX(-19px);
+}
+
+span.text:hover {
+  color: #000;
+  text-shadow: 0px 0px 14px #ff5c00;
+}
+
+p.legend {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: -110px;
+}
+
+.menuImg1 {
+  position: absolute;
+  top: 100px;
+  left: -50px;
+  animation-duration: 10s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.menuImg2 {
+  position: absolute;
+  top: 120px;
+  right: 200px;
+  animation-duration: 12s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.menuImg3 {
+  position: absolute;
+  top: 220px;
+  left: 300px;
+  width: 109.222px;
+  height: 98.633px;
+  transform: rotate(-10deg);
+  animation: flottement 3000ms ease-in-out 1000ms infinite;
+}
+
+.menuImg4 {
+  position: absolute;
+  top: 450px;
+  left: 250px;
+  width: 70.762px;
+  height: 70.76px;
+  animation-duration: 6s;
+  animation-name: rotate-flower;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.menuImg5 {
+  position: absolute;
+  top: 350px;
+  right: 0;
+}
+
+.menuImg6 {
+  position: absolute;
+  top: 420px;
+  right: 180px;
+  animation: flottement 3000ms ease-out 2000ms infinite;
+}
+
+.menuImg7 {
+  position: absolute;
+  top: 700px;
+  left: 130px;
+  width: 105.914px;
+  height: 95.646px;
+  transform: rotate(-0.512deg);
+  animation: flottement 2000ms ease 2000ms infinite;
+}
+
+.menuImg8 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .titreMenu {
+    font-size: 2.5vw;
+  }
+}
 /*mise en forme de la section nomination au oscars)*/
 @keyframes animHautBas {
   0% {
@@ -10,28 +193,25 @@
     opacity: 1;
   }
 }
-#nomination {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 180px;
-  margin-top: 170px;
-  margin-bottom: 50px;
-  animation-name: animHautBas 4s;
-}
-
 #nomination.scroll {
   animation: animHautBas 3s;
   animation-fill-mode: both;
 }
 
-.texte {
+#nomination {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 170px 180px 45px 180px;
+  animation-name: animHautBas 4s;
+}
+#nomination .texte {
   position: absolute;
   color: #FFF5E9;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Quicksand;
-  font-size: 2.5vw;
+  font-size: 2.4vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -41,18 +221,15 @@
   animation-name: animHautBas 4s;
   animation-fill-mode: both;
 }
-
-.texte.scroll {
+#nomination .texte.scroll {
   animation: animHautBas 3s;
   animation-fill-mode: both;
 }
-
-.fondOrangeNomination {
+#nomination .fondOrangeNomination {
   position: relative;
   width: 67%;
 }
-
-.logoOscar {
+#nomination .logoOscar {
   position: relative;
   left: 100px;
   z-index: 1;
@@ -112,11 +289,17 @@
   animation-timing-function: linear;
 }
 
+footer {
+  padding-top: 48em;
+  padding-bottom: 0;
+}
+
 .story #characters {
   margin: 6em;
   display: flex;
   flex-direction: column;
   text-align: center;
+  overflow-x: hidden;
 }
 .story #characters h3 {
   background-image: url("/wp-content/themes/foce-child/images/orange_characters_bg.png");
@@ -127,12 +310,12 @@
 .story #characters .swiper-container {
   max-width: 1440px;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 140px;
   flex: none;
 }
 @media (max-width: 780px) {
   .story #characters .swiper-container {
-    max-width: 900px;
+    max-width: 350px;
   }
 }
 .story #characters .swiper-container .swiper-slide {
@@ -199,19 +382,23 @@
 
 .banner {
   background-image: none;
+  margin-bottom: 140px;
 }
 .banner .logo {
   position: sticky;
-  top: 0px;
+  top: 140px;
   z-index: 2;
   animation: animHautBas 4s;
-  animation: flottement 3000ms ease-in-out 1000ms infinite;
+  animation: flottement 3000ms ease-in-out 2000ms infinite;
 }
 
 #background-video {
-  width: 1440px;
   position: absolute;
-  z-index: 1;
+  max-width: 1440px;
+  width: 100% !important;
+  height: auto !important;
+  top: 80px;
+  z-index: -2;
   animation: animateHautvideo 2s 300ms both;
   opacity: 1;
 }
@@ -219,7 +406,7 @@
 #background-image {
   width: 1440px;
   position: absolute;
-  z-index: -2;
+  z-index: 1;
   animation: animateHautvideo 2s 300ms both;
   opacity: 1;
 }
@@ -227,7 +414,6 @@
 #story {
   position: relative;
 }
-
 #story.scroll {
   animation: animHautBas 4s;
   animation-fill-mode: both;
@@ -241,8 +427,9 @@
 
 .lesPersonnagesH3 {
   width: 15em;
+  position: absolute;
+  left: 4px;
 }
-
 .lesPersonnagesH3.scroll {
   animation: animHautBas 2s;
   animation-fill-mode: both;
@@ -312,7 +499,6 @@
 #studio h2::after {
   transform-origin: 50% 53px;
 }
-
 #studio h2::before {
   height: 191px;
   position: absolute;
@@ -322,16 +508,12 @@
   animation-timing-function: linear;
 }
 
-.site-footer {
-  overflow: inherit;
-}
-.site-footer .site-footer::after {
+.site-footer::after {
   height: 161px;
 }
-.site-footer .site-footer ul::after {
+.site-footer ul::after {
   height: 646px;
 }
-
 .site-footer::before {
   height: 154px;
   position: absolute;
@@ -345,11 +527,48 @@
 @media screen and (max-width: 768px) {
   video {
     display: none;
+    width: 100% !important;
+    height: auto !important;
   }
   .logo {
     display: block;
+    right: 30%;
   }
   .banner {
     background-image: url("images/banner.png");
+    width: 100% !important;
+    height: auto !important;
+  }
+  .menu {
+    height: 93px;
+  }
+  .menuImg7 {
+    top: 655px;
+  }
+  .menuImg2, .menuImg3, .menuImg4, .menuImg6 {
+    display: none;
+  }
+  span.text {
+    font-size: 0.7em;
+  }
+  .titreMenu {
+    font-size: 4vw;
+    padding-left: 22px;
+  }
+  .lesPersonnagesH3 {
+    font-size: 6vw;
+    text-align: center;
+  }
+  #nomination::after {
+    display: none;
+  }
+  .sidenav.active {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .logo {
+    display: block;
+    right: 20%;
   }
 }/*# sourceMappingURL=style.css.map */

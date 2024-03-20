@@ -81,7 +81,7 @@ window.addEventListener('scroll', function() {
   
 
 
-  // SWIPER SLIDER
+  // SWIPER SLIDER//
   //pour changer des paramètres, voir Doc swiperjs.com/swiper-api le tableau
  const swiper = new Swiper('.swiper-container', {
   effect: "coverflow",
@@ -113,3 +113,27 @@ window.onscroll = () => {
   }
 }
 
+//nouveau MENU//
+
+const sidenav = document.getElementById("newSidenav");
+const toggleBtn = document.getElementById("toggleBtn");
+const links = document.querySelectorAll("li");
+const fixe = document.getElementById("menu");
+
+
+links.forEach(link => {
+  link.addEventListener("click", closeNav);
+   });
+
+toggleBtn.onclick = toggleNav;
+
+// classlist met ou enlève les classes
+function toggleNav() {
+  sidenav.classList.toggle("active");
+  toggleBtn.classList.toggle("active");
+}
+
+function closeNav() {
+  sidenav.classList.remove("active");
+  toggleBtn.classList.remove("active"); 
+ }

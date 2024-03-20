@@ -1,7 +1,8 @@
-
+@import"header";
 @import"nominationFestival";
 @import"footer";
 @import"section-characters";
+
 
 @keyframes fadin{
 			from{	
@@ -58,52 +59,58 @@
 // vidéo avec Logo animé 
 .banner{
 	background-image: none;
+	margin-bottom:140px;
 	.logo{
 		position:sticky;
-		top: 0px;
+		top:140px;
 		z-index: 2;	
 		animation: animHautBas 4s;
-		animation: flottement 3000ms ease-in-out 1000ms infinite;
+		animation: flottement 3000ms ease-in-out 2000ms infinite;
 	}	
 }
 
 #background-video {
-	width: 1440px;
 	position:absolute;
-	z-index: 1;
-	animation: animateHautvideo 2s 300ms both;
-	opacity: 1;
+	max-width: 1440px;
+		width: 100% !important;
+		height: auto !important;
+		top: 80px;
+	  	z-index:-2;
+		animation: animateHautvideo 2s 300ms both;
+		opacity: 1;
 }		
 
 #background-image{
 	width: 1440px;
 	position:absolute;
-	z-index: -2;
+	z-index: 1;
 	animation: animateHautvideo 2s 300ms both;
 	opacity: 1;
 }
 		
 #story{
 	position: relative;
-}
-	#story.scroll{
+	&.scroll{
 		animation: animHautBas 4s;
 		animation-fill-mode: both;
 	}
-	
+}
 .h2Histoire.scroll{
 	animation: animHautBas 2s;
 	animation-fill-mode: both;
 	display: block;
 }
+
 .lesPersonnagesH3{
 	width: 15em;
-	}	
-	.lesPersonnagesH3.scroll {
+	position: absolute;
+	left: 4px;
+	&.scroll {
 		animation: animHautBas 2s;
 		animation-fill-mode: both;
 		display: block;
-	}		
+		}
+}		
 
   // changement d'image section "lieu" pour nuages
 .story #place{
@@ -113,37 +120,31 @@
 	.story #place.scroll{
 		animation: animHautBas 4s;
 	}
-
 	.lieuH3.scroll {
 		animation: animHautBas 2s;
 		animation-fill-mode: both;
 		display: block;
 	}
-
 	#place .bigCloud,
 	#place .littleCloud {
 	    position:absolute;
 	    filter: blur(16.5px);
         z-index: 2;
 	}
-	
 	.bigCloud {
 	  height: 122px;	
 	  top: 70px;
 	  right: 180px;
 	}
-	
 	#place .littleCloud {
 	  height: 55px;	
 	  top: 250px;
 	  right: 500px;
 	}
-
 #studio.scroll{
 	animation: animHautBas 4s;
 	animation-fill-mode: both;
 }
-
 	.h2Studio{	
 		opacity: 0;
 	}
@@ -167,29 +168,30 @@
 	height: 154px;
 }  
 // méthode2 déplacer l'axe de rotation vers centre de la fleur
-#studio h2::after{
+#studio{
+    & h2::after{
 	transform-origin: 50% 53px;
-} 
+    } 
 
-#studio h2::before{  
+    & h2::before{  
 	height:191px;
 	position: absolute;	 
 	animation-duration: 8s;
 	animation-name:  rotate-flower;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;	
+	}
 }
 
 .site-footer{	
-	overflow:inherit;  // Evite le tronquage de l'image orchidée à droite
-	.site-footer::after{
+	&::after{
 		height: 161px;
   	}
- 		.site-footer ul::after{
+ 		& ul::after{
 			height: 646px;
   		}
-}
-	.site-footer::before{  
+
+	&::before{  
 		height:154px;
 		position: absolute;	 
 		animation-duration: 8s;
@@ -197,8 +199,7 @@
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;		
 	}
-
-	
+}	
 //   --------------------------------------------------------------------------
 
  /* Masquer la vidéo et afficher l'image de fallback sur mobile */
@@ -206,12 +207,48 @@
     
     video {
         display: none;
+		width: 100% !important;
+		height: auto !important;
     }
-
-   .logo{
-        display: block;        }
-		
+	.logo{
+        display: block; 
+	right: 30%;
+	}
 	.banner{
 	background-image: url("images/banner.png");
+	width: 100% !important;
+	height: auto !important;
 	}
-  }
+	.menu{
+		height: 93px;
+	}
+	.menuImg7{
+		top:655px;
+	}
+	.menuImg2, .menuImg3, .menuImg4, .menuImg6{
+		display: none;
+	}
+	span.text{
+		font-size: 0.7em;
+	}
+	.titreMenu{
+		font-size: 4vw;
+		padding-left: 22px;
+	}
+ 	.lesPersonnagesH3{
+		font-size: 6vw;
+		text-align: center;
+	}
+	#nomination::after {
+		display: none;
+	}
+	.sidenav.active{
+		text-align: center;
+	}
+ }
+  @media screen and (max-width: 1280px) {
+   	.logo{
+        display: block; 
+	right: 20%;
+	}
+}
